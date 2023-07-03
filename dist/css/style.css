@@ -1,20 +1,17 @@
-/*! HTML5 Boilerplate v8.0.0 | MIT License | https://html5boilerplate.com/ */
-
-/* main.css 3.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
-/*
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
-
-/* ==========================================================================
-   Base styles: opinionated defaults
-   ========================================================================== */
-
+:root {
+  --font-lato: "Lato", sans-serif;
+  --azul: #4b33fd;
+  --Gris: #848282;
+  --blanco: #ffffff;
+  --negro: #000000;
+  --rojo: #da2e2e;
+  --verde: #52d127;
+}
 html {
   color: #222;
   font-size: 1em;
   line-height: 1.4;
+  font-family: var(--font-lato);
 }
 
 /*
@@ -34,10 +31,6 @@ html {
   text-shadow: none;
 }
 
-/*
- * A better looking default horizontal rule
- */
-
 hr {
   display: block;
   height: 1px;
@@ -46,12 +39,6 @@ hr {
   margin: 1em 0;
   padding: 0;
 }
-
-/*
- * Remove the gap between audio, canvas, iframes,
- * images, videos and the bottom of their containers:
- * https://github.com/h5bp/html5-boilerplate/issues/440
- */
 
 audio,
 canvas,
@@ -62,31 +49,15 @@ video {
   vertical-align: middle;
 }
 
-/*
- * Remove default fieldset styles.
- */
-
 fieldset {
   border: 0;
   margin: 0;
   padding: 0;
 }
 
-/*
- * Allow only vertical resizing of textareas.
- */
-
 textarea {
   resize: vertical;
 }
-
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
 
 /*
  * Hide visually and from screen readers
@@ -178,12 +149,6 @@ textarea {
   /* Style adjustments for high resolution devices */
 }
 
-/* ==========================================================================
-   Print styles.
-   Inlined to avoid the additional HTTP request:
-   https://www.phpied.com/delay-loading-your-print-css/
-   ========================================================================== */
-
 @media print {
   *,
   *::before,
@@ -244,49 +209,338 @@ textarea {
     page-break-after: avoid;
   }
 }
-
-header {
-  background: url("http://www.autodatz.com/wp-content/uploads/2017/05/Old-Car-Wallpapers-Hd-36-with-Old-Car-Wallpapers-Hd.jpg");
-  text-align: center;
-  width: 100%;
-  height: auto;
-  background-size: cover;
-  background-attachment: fixed;
-  position: relative;
-  overflow: hidden;
-  border-radius: 0 0 85% 85% / 30%;
-}
-header .overlay {
-  width: 100%;
-  height: 100%;
-  padding: 50px;
-  color: #fff;
-  text-shadow: 1px 1px 1px #333;
-  background-image: linear-gradient(135deg, #9f05ff69 10%, #fd5e086b 100%);
+/* Estilos para los textos */
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: normal;
 }
 
 h1 {
-  font-family: "Dancing Script", cursive;
-  font-size: 80px;
-  margin-bottom: 30px;
+  font-size: 32px;
+  text-align: center;
+  padding: 20px;
 }
 
-h3,
+h2,
+h3 {
+  font-size: 24px;
+  padding: 10px 0;
+}
+
 p {
-  font-family: "Open Sans", sans-serif;
-  margin-bottom: 30px;
+  font-size: 18px;
+  margin-bottom: 0;
 }
 
-button {
-  border: none;
-  outline: none;
-  padding: 10px 20px;
-  border-radius: 50px;
-  color: #333;
-  background: #fff;
-  margin-bottom: 50px;
-  box-shadow: 0 3px 20px 0 #0000003b;
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
 }
-button:hover {
-  cursor: pointer;
+
+/* Estilos para la barra de navegación */
+.navbar {
+  background-color: var(--azul);
+  color: var(--blanco);
+  padding: 8px 0;
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar .logo {
+  width: 150px;
+}
+
+.navbar .nav-links {
+  display: flex;
+  font-family: var(--font-lato);
+  font-weight: 700;
+}
+
+.navbar .nav-links a {
+  color: var(--blanco);
+  text-decoration: none;
+  margin-left: 20px;
+}
+.navbar .nav-links a:hover {
+  color: var(--rojo); /* Color de texto al hacer hover */
+}
+
+/* Estilos para las secciones */
+.red-section {
+  background-color: var(--rojo);
+  color: var(--blanco);
+  padding: 50px 0;
+  text-align: center;
+}
+
+.red-section__title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.red-section__description {
+  font-size: 18px;
+  margin-bottom: 0;
+  display: block;
+}
+.cta {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.cta__button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--azul);
+  color: var(--blanco);
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.cta__button:hover {
+  background-color: var(--Gris);
+}
+
+/* Estilos responsivos */
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 24px;
+    padding: 10px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .navbar .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar .nav-links {
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .product-row {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/*--------------------------------------*/
+.heading {
+  text-align: center;
+  padding: 20px;
+  height: 30rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--blanco);
+  position: relative;
+  background-image: url("../img/varios-productos-limpieza.webp");
+  background-size: cover;
+  background-position: center;
+}
+
+.heading__title h1 {
+  font-size: 42px;
+  color: var(--negro);
+  margin-bottom: 10px;
+  z-index: 1;
+  text-transform: uppercase;
+  font-family: var(--font-lato);
+  font-weight: 700; /* Peso de la fuente Lato Bold */
+}
+
+.heading__subtitle h2 {
+  font-size: 24px;
+  color: var(--blanco);
+  margin-top: 10px;
+}
+.blue-section {
+  background-color: var(--blanco);
+  color: var(--Gris);
+  padding: 50px 0;
+  text-align: center;
+}
+
+.blue-section h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.blue-section p {
+  font-size: 18px;
+  margin-bottom: 0;
+}
+
+.group-title {
+  font-family: var(--font-lato);
+  color: var(--azul);
+  font-size: 24px; /* Aumenta el tamaño de fuente */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Agrega una sombra al texto */
+  /* Otros estilos adicionales para resaltar el título del grupo */
+}
+
+.product-group h4 {
+  font-family: var(--font-lato);
+  color: var(--azul);
+  font-size: 18px; /* Ajusta el tamaño de fuente más pequeño */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Agrega una sombra al texto */
+  /* Otros estilos adicionales para resaltar el título del grupo */
+}
+
+.product-row {
+  display: flex;
+}
+
+.product {
+  width: calc(33.33% - 20px); /* Tamaño de cada producto */
+  margin-bottom: 20px;
+  margin-right: 20px;
+  padding: 20px;
+  background-color: var(--blanco);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product__image {
+  width: 100px; /* Ajusta el tamaño de la imagen según tus necesidades */
+  margin-right: 20px; /* Espacio entre la imagen y el contenido */
+}
+
+.product h4,
+.product p {
+  margin: 0; /* Elimina los márgenes de título y descripción */
+}
+.view-all .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--azul);
+  color: var(--blanco);
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.view-all .btn:hover {
+  background-color: var(--Gris);
+}
+.contact-section {
+  background-color: var(--azul);
+  color: var(--blanco);
+  padding: 40px 0;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h3 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+
+.contact-options {
+  margin-bottom: 40px;
+}
+
+.contact-options h4 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.contact-options p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+a.btn-whatsapp {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: var(--verde);
+  color: var(--blanco);
+  text-decoration: none;
+  border-radius: 4px;
+}
+footer {
+  background-color: #f5f5f5;
+  padding: 20px;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+  color: #333;
+  font-size: 14px;
+  font-weight: bold;
+}
+.distribuidor-section {
+  background-color: #f5f5f5;
+  padding: 40px;
+  text-align: center;
+}
+
+.distribuidor-section h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.distribuidor-section p {
+  margin-bottom: 20px;
+}
+
+.distribuidor-section .btn {
+  display: inline-block;
+  background-color: #10008c;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.distribuidor-section .btn:hover {
+  background-color: #0a0061;
+}
+.paraguay-section {
+  padding: 50px 0;
+  background-color: #f5f5f5;
+}
+
+.paraguay-section .container {
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.paraguay-section h3 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.paraguay-section p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.5;
 }
