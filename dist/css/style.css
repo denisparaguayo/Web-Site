@@ -1,11 +1,13 @@
 :root {
   --font-lato: "Lato", sans-serif;
   --azul: #4b33fd;
-  --Gris: #848282;
   --blanco: #ffffff;
   --negro: #000000;
-  --rojo: #da2e2e;
+  --rojo: #e52521;
   --verde: #52d127;
+  --Gris: #848282;
+  --Gris2: #d6cdcd;
+  --bordo: #970c0a;
 }
 html {
   color: #222;
@@ -329,13 +331,6 @@ p {
   }
 }
 
-@media screen and (max-width: 768px) {
-  .product-row {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
 /*--------------------------------------*/
 .heading {
   text-align: center;
@@ -346,14 +341,14 @@ p {
   justify-content: center;
   color: var(--blanco);
   position: relative;
-  background-image: url("../img/varios-productos-limpieza.webp");
+  background-image: url("../img/HeroMaxima.webp");
   background-size: cover;
   background-position: center;
 }
 
 .heading__title h1 {
   font-size: 42px;
-  color: var(--negro);
+  color: var(--blanco);
   margin-bottom: 10px;
   z-index: 1;
   text-transform: uppercase;
@@ -367,34 +362,44 @@ p {
   margin-top: 10px;
 }
 .blue-section {
-  background-color: var(--blanco);
-  color: var(--Gris);
-  padding: 50px 0;
+  background-image: url("https://images.unsplash.com/photo-1495195129352-aeb325a55b65?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1776&q=80");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--negro);
+
   text-align: center;
 }
 
 .blue-section h3 {
   font-size: 24px;
   font-weight: bold;
-  margin-bottom: 10px;
+  color: var(--negro);
+  text-transform: uppercase;
+  padding: 0;
 }
 
 .blue-section p {
   font-size: 18px;
   margin-bottom: 0;
 }
+.blue-section {
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 40px 20px;
+}
 
 .group-title {
   font-family: var(--font-lato);
-  color: var(--azul);
+  color: var(--negro);
   font-size: 24px; /* Aumenta el tamaño de fuente */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Agrega una sombra al texto */
-  /* Otros estilos adicionales para resaltar el título del grupo */
 }
 
 .product-group h4 {
   font-family: var(--font-lato);
-  color: var(--azul);
+  color: var(--negro);
   font-size: 18px; /* Ajusta el tamaño de fuente más pequeño */
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Agrega una sombra al texto */
   /* Otros estilos adicionales para resaltar el título del grupo */
@@ -411,18 +416,21 @@ p {
   padding: 20px;
   background-color: var(--blanco);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
 }
 
 .product__image {
   width: 100px; /* Ajusta el tamaño de la imagen según tus necesidades */
   margin-right: 20px; /* Espacio entre la imagen y el contenido */
+  filter: drop-shadow(4px 6px 12px var(--Gris));
 }
 
 .product h4,
 .product p {
   margin: 0; /* Elimina los márgenes de título y descripción */
 }
-.view-all .btn {
+.product .btn {
+  margin-top: 10px;
   display: inline-block;
   padding: 10px 20px;
   background-color: var(--azul);
@@ -455,7 +463,6 @@ h3 {
 
 p {
   font-size: 16px;
-  margin-bottom: 40px;
 }
 
 .contact-options {
@@ -530,12 +537,11 @@ footer p {
 .paraguay-section .container {
   max-width: 960px;
   margin: 0 auto;
-  text-align: left;
 }
 
 .paraguay-section h3 {
   font-size: 24px;
-  color: #333;
+  color: var(--azul);
   margin-bottom: 20px;
 }
 
@@ -543,4 +549,80 @@ footer p {
   font-size: 16px;
   color: #666;
   line-height: 1.5;
+}
+.blue-section_subtitle,
+.blue-section_title {
+  text-align: left;
+}
+#hider {
+  margin: 20px;
+}
+#hider > h1 {
+  text-align: center;
+  font-size: 3rem;
+}
+#hider > p {
+  text-align: center;
+  font-size: 1.5rem;
+  font-style: italic;
+}
+.continer {
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 41px 20px;
+  background-image: url("https://images.unsplash.com/photo-1495195129352-aeb325a55b65?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1776&q=80");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin-bottom: 60px;
+}
+.card > div {
+  box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.5);
+}
+.card-image {
+  width: 400px;
+  height: 250px;
+  border-radius: 20px;
+}
+.card-image > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: bottom;
+  border-radius: 20px;
+}
+.card-text {
+  margin: -10px auto;
+  margin-bottom: -50px;
+  height: 300px;
+  width: 300px;
+  background-color: #1d1c20;
+  color: #fff;
+  padding: 20px;
+}
+.card-meal-type {
+  font-style: italic;
+}
+.card-title {
+  font-size: 2.2rem;
+}
+.card-body {
+  font-size: 1.25rem;
+}
+.card-price {
+  width: 100px;
+  height: 100px;
+  background-color: var(--bordo);
+  color: var(--blanco);
+  margin-left: auto;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
